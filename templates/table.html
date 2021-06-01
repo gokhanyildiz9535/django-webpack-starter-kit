@@ -1,0 +1,50 @@
+{% extends "includes/base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+{% block title %}
+Table
+{% endblock title %}
+
+{% block head %}
+
+<!-- You should added this tags for production files !!! -->
+{% render_bundle 'table' 'css' %}
+<!-- You can use to import static CSS files -->
+
+{% endblock head %}
+
+{% block body %}
+
+<section class="container tableContent">
+ <div id="myGrid" style="height: 768px; width: 100%;" class="ag-theme-alpine"></div>
+</section>
+
+<h1 class="text-center base_style">
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veritatis.
+</h1>
+
+<h1 class="text-center new_base_style">
+ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, omnis?<br>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, placeat.<br>
+ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, odit.<br>
+ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, consectetur?<br>
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, deleniti.
+</h1>
+
+{% endblock body %}
+
+{% block scriptblock %}
+<!-- Start -->
+{% if settings.DEBUG and settings.WEBPACK_LIVE_SERVER %}
+<!-- You should added this tags for development files !!! -->
+<script src="{{ settings.WEBPACK_LIVE_SERVER_CONFIG.ADDRESS }}/table.bundle.js"></script>
+{% else %}
+<!-- You should added this tags for production files !!! -->
+{% render_bundle 'table' 'js' %}
+{% endif %}
+<!-- End -->
+
+<!-- You can use to import static JS files -->
+
+{% endblock scriptblock %}

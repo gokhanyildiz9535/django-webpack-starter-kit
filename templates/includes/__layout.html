@@ -1,0 +1,45 @@
+{% extends "includes/base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+<!-- 
+    You can use this template for all new page
+    Modify:
+    title
+    head 
+    body
+    webpack bundle: css,js files
+    static: css,js files
+-->
+
+{% block title %}
+Index
+{% endblock title %}
+
+{% block head %}
+
+<!-- You should added this tags for production files !!! -->
+{% render_bundle 'index' 'css' %}
+<!-- You can use to import static CSS files -->
+<link rel="stylesheet" href="">
+
+{% endblock head %}
+
+{% block body %}
+
+{% endblock body %}
+
+{% block scriptblock %}
+<!-- Start -->
+{% if settings.DEBUG and settings.WEBPACK_LIVE_SERVER %}
+<!-- You should added this tags for development files !!! -->
+<script src="{{ settings.WEBPACK_LIVE_SERVER_CONFIG.ADDRESS }}/index.bundle.js"></script>
+{% else %}
+<!-- You should added this tags for production files !!! -->
+{% render_bundle 'index' 'js' %}
+{% endif %}
+<!-- End -->
+
+<!-- You can use to import static JS files -->
+<script src=""></script>
+{% endblock scriptblock %}

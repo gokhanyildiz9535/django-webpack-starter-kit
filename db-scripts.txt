@@ -1,0 +1,25 @@
+-----------------------------------------------------------------
+
+# PostgreSQL Database Scripts Information
+
+# Basic Scripts
+db_import[dbi]: Create database if not exists and Import ./project_files/exportdb.pgsql
+db_export[dbe]: Database export to ./project_files/exportdb.pgsql
+db_backup[dbb]: Copy to the backup folder exportdb.pgsql file with date info
+db_removebackup[dbrb]: Clear ./project_files/backup/* directory files
+db_remove_all_backup[dbra]: Clear ./project_files/* directory files
+db_drop_database[dbdd]: Drop database table on the pgsql
+db_migrate_all[dbmg $$ yarn db:migrate]: Django database stuffs migration process
+
+# Automated Scripts
+db_export_backup[deb]: Database export and Backup into the ./project_files/backup
+db_rollback[dbr]: Go back to the previous backup database file to the Database
+
+postgres db admin panel username@password: postgres@your-pgsql-db-password
+django project admin panel username@password: admin@your-djangoapp-superuser-password
+
+-----------------------------------------------------------------
+
+# Steps (updated soon)
+
+-----------------------------------------------------------------

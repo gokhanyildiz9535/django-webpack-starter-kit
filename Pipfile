@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django-webpack-loader = "*"
+djangorestframework = "*"
+django-extensions = "*"
+django-environ = "*"
+django-crispy-forms = "*"
+Django = "*"
+Werkzeug = "*"
+django-ckeditor = "*"
+django-autoslug = "*"
+django-richtextfield = "*"
+sentry-sdk = "*"
+Pillow = "*"
+autopep8 = "*"
+psycopg2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

@@ -1,0 +1,36 @@
+# python -m pip install --upgrade pip --user
+# pip install --force-reinstall requests[security]
+# Option I:
+# pip install --upgrade --force-reinstall -r requirements.txt
+# pip freeze # Get Dependencies Versions
+# Option II:
+# pipenv install -r requirements.txt
+# Restart IDE, Select Python Interpreter on VS Code: CTRL+SHIFT+P
+
+# Django Stuffs
+django
+django-webpack-loader
+djangorestframework
+django-extensions
+psycopg2
+django-environ
+django-crispy-forms
+django-ckeditor
+django-autoslug
+django-richtextfield
+pillow
+werkzeug
+sentry-sdk
+
+# Other Components
+autopep8
+
+# psycopg2-binary
+# ...
+# https://pygraphviz.github.io/documentation/stable/install.html#windows
+# https://django-extensions.readthedocs.io/en/latest/graph_models.html
+# pygraphviz
+# pydotplus
+# python manage.py graph_models -a -g -o db_diagram.png
+# ...
+

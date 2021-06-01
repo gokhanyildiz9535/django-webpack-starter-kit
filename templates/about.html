@@ -1,0 +1,45 @@
+{% extends "includes/base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock title %}
+
+{% block head %}
+
+<!-- You should added this tags for production files !!! -->
+
+<!-- You can use to import static CSS files -->
+
+{% endblock head %}
+
+{% block body %}
+
+<div class="col-md-8 container">
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">About us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolores accusamus quibusdam consequuntur quis beatae?</p>
+</div>
+
+<div class="col-md-8 jumbotron container" style="margin-top: 2em; margin-bottom: 2em;">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae debitis, quam tempore officia sint ipsum cumque eligendi voluptatem obcaecati quod repellat recusandae impedit tempora dignissimos ipsam amet doloribus excepturi aliquid.</p>
+</div>
+
+{% endblock body %}
+
+{% block scriptblock %}
+<!-- Start -->
+{% if settings.DEBUG and settings.WEBPACK_LIVE_SERVER %}
+<!-- You should added this tags for development files !!! -->
+
+{% else %}
+<!-- You should added this tags for production files !!! -->
+
+{% endif %}
+<!-- End -->
+
+<!-- You can use to import static JS files -->
+
+{% endblock scriptblock %}

@@ -1,0 +1,93 @@
+{
+    "name": "django-webpack-starter-kit",
+    "version": "1.0.3",
+    "description": "Django Webpack Starter Kit for Django Full Stack Web Developers",
+    "dependencies": {
+        "@babel/core": "^7.13.15",
+        "@babel/plugin-transform-runtime": "^7.13.15",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.13.15",
+        "@babel/runtime": "^7.13.10",
+        "babel-loader": "^8.2.2",
+        "clean-webpack-plugin": "^3.0.0",
+        "css-loader": "^5.2.1",
+        "css-minimizer-webpack-plugin": "^2.0.0",
+        "eslint": "^7.24.0",
+        "file-loader": "^6.2.0",
+        "fs-extra": "^9.1.0",
+        "html-loader": "^2.1.2",
+        "html-webpack-plugin": "^5.3.1",
+        "mini-css-extract-plugin": "^1.4.1",
+        "node-sass": "^5.0.0",
+        "resolve-url-loader": "^3.1.2",
+        "sass-loader": "^11.0.1",
+        "style-loader": "^2.0.0",
+        "systemjs": "^6.8.3",
+        "ts-loader": "^8.1.0",
+        "typescript": "^4.2.4",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.32.0",
+        "webpack-bundle-tracker": "^0.4.3",
+        "webpack-cli": "^4.6.0",
+        "webpack-dev-server": "^3.11.2",
+        "webpack-merge": "^5.7.3"
+    },
+    "devDependencies": {
+        "ag-grid-community": "^25.1.0",
+        "ag-grid-enterprise": "^25.1.0",
+        "bootstrap": "^4.6.0",
+        "fs-extra": "^9.1.0",
+        "glob": "^7.1.6",
+        "javascript-obfuscator": "^2.12.0",
+        "jquery": "^3.6.0",
+        "popper.js": "^1.16.1"
+    },
+    "scripts": {
+        "start": "webpack serve --config webpack.dev.js --progress",
+        "build-dev": "webpack --config webpack.dev.js --progress",
+        "build-prod": "webpack --config webpack.prod.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "js-obfuscator": "node ./bin/js-files-obfuscator.js",
+        "clear_staticfiles": "node ./bin/clear_staticfiles.js",
+        "clear_licensefiles": "node ./bin/clear_licensefiles.js",
+        "build:final": "npm run clear_staticfiles && npm run build-prod && python manage.py collectstatic --settings=core.prod && npm run js-obfuscator && npm run clear_licensefiles",
+        "build:prod": "npm run clear_staticfiles && npm run build-prod && python manage.py collectstatic --settings=core.prod && npm run js-obfuscator && npm run clear_licensefiles && python manage.py runserver_plus 0.0.0.0:8000 --insecure --settings=core.prod",
+        "start:yarn": "npm run start",
+        "start:django": "python manage.py runserver_plus 0.0.0.0:8000",
+        "start:prod": "python manage.py runserver_plus 0.0.0.0:8000 --insecure --settings=core.prod",
+        "db:migrate": "python manage.py makemigrations && python manage.py migrate",
+        "db:migrate:prod": "python manage.py makemigrations --settings=core.prod && python manage.py migrate --settings=core.prod"
+    },
+    "bin": {
+        "gpush": "./bin/git_push.sh",
+        "dbe": "./bin/db_export.sh",
+        "deb": "./bin/db_export_backup.sh",
+        "dbi": "./bin/db_import.sh",
+        "dbb": "./bin/db_backup.sh",
+        "dbr": "./bin/db_rollback.sh",
+        "dbrb": "./bin/db_removebackup.sh",
+        "dbdd": "./bin/db_drop_database.sh",
+        "dbra": "./bin/db_remove_all_backup.sh",
+        "dbmg": "./bin/db_migrate_all.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gokhanyildiz9535/django-webpack-starter-kit.git"
+    },
+    "keywords": [
+        "django",
+        "django webpack",
+        "django webpack loader",
+        "django webpack starter",
+        "django webpack starter kit",
+        "webpack",
+        "webpack loader",
+        "django webpack template"
+    ],
+    "author": "Gokhan Yildiz",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gokhanyildiz9535/django-webpack-starter-kit/issues"
+    },
+    "homepage": "https://github.com/gokhanyildiz9535/django-webpack-starter-kit#readme"
+}

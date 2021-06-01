@@ -1,0 +1,66 @@
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ {% block meta %}
+
+ {% endblock meta %}
+ <title>
+  {% block title %}
+
+  {% endblock %}
+ </title>
+ <link href="/media/favicon.ico" rel=icon>
+
+ <!-- Start -->
+ <!-- You should added this tags for production files !!! -->
+ {% render_bundle 'vendor' 'css' %}
+ {% render_bundle 'app' 'css' %}
+ <!-- End -->
+
+ <!-- You can use to import static CSS files -->
+ <link rel="stylesheet" href="{% static '/css/blog.css' %}">
+
+ {% block head %}
+
+ {% endblock %}
+</head>
+
+<body>
+ {% include "includes/navbar.html" %}
+
+ <!-- Content:Start -->
+ {% block body %}
+
+ {% endblock %}
+ <!-- Content:End -->
+
+ <!-- Start -->
+ {% if settings.DEBUG and settings.WEBPACK_LIVE_SERVER %}
+ <!-- You should added this tags for development files !!! -->
+ <script src="{{ settings.WEBPACK_LIVE_SERVER_CONFIG.ADDRESS }}/vendor.bundle.js"></script>
+ <script src="{{ settings.WEBPACK_LIVE_SERVER_CONFIG.ADDRESS }}/app.bundle.js"></script>
+ <script src="{{ settings.WEBPACK_LIVE_SERVER_CONFIG.ADDRESS }}/main.bundle.js"></script>
+ {% else %}
+ <!-- You should added this tags for production files !!! -->
+ {% render_bundle 'vendor' 'js' %}
+ {% render_bundle 'app' 'js' %}
+ {% render_bundle 'main' 'js' %}
+ {% endif %}
+ <!-- End -->
+
+ {% block scriptblock %}
+
+ {% endblock scriptblock %}
+
+ <!-- You can use to import static JS files -->
+ <script src="{% static '/js/base.js' %}"></script>
+
+ {% include "includes/footer.html" %}
+</body>
+
+</html>

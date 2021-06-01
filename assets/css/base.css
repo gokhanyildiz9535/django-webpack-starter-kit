@@ -1,0 +1,20 @@
+p.base_style {
+ color: red;
+ font-size: 1.25em;
+ margin: 0 1em 1em 0;
+}
+
+h1.base_style {
+ color: green;
+ font-size: 1.20em;
+ margin: 1em 1em 1em 1em;
+}
+
+h1.new_base_style {
+ color: rgb(228, 15, 50);
+ font-size: 1.25 em;
+ margin: 1.25 em;
+ background: url(/assets/images/test.png);
+ background-repeat: no-repeat;
+ background-position: center;
+}

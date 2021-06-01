@@ -1,0 +1,22 @@
+Git environment is set up
+
+git config --global user.name "your-username"
+git config --global user.email "your-email-adress@domain.com"
+git init # to create the git file
+git status # to see all changes since the last commit
+git add filename or git add .
+git rm --cached filename # for removing from files added to commit
+git commit -m "message"
+git log # to see a list of all commits made
+git reset --hard # to revert to the last commit environment
+git branch # For information about branch
+git branch BRANCH_NAME # to create branch
+git branch -d BRANCH_NAME # to delete the created branch (local)
+git push origin --delete # to delete the created branch (remote)
+git checkout BRANCH_NAME # to change branch
+git branch NEW_BRANCH_NAME COMMIT_ID # to create a new branch with an old commit
+
+Using the Github environment
+
+git remote add origin repoUrl # to link the existing project to the repo opened via github
+git push origin master # to drop your existing project or branch ini to master branch

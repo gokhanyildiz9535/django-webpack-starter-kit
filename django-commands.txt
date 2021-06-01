@@ -1,0 +1,21 @@
+Create Project: 
+django-admin startproject core
+
+Database Stuffs:
+python manage.py makemigrations
+python manage.py migrate
+
+Django SuperUser:
+python manage.py createsuperuser --settings=core.local
+
+Django App:
+python manage.py startapp myapp
+
+Django Run Dev/Prod:
+python manage.py runserver
+python manage.py runserver_plus --settings=core.local
+python manage.py runserver_plus 0.0.0.0:8000 --settings=core.prod
+python manage.py collectstatic --settings=core.prod
+
+Django Deploy:
+python manage.py check --deploy --settings=core.prod

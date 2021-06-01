@@ -1,0 +1,15 @@
+my-djangoapp-db-name
+postgres
+my-pgsqldb-password
+localhost
+5432
+
+/*
+
+Line 1 : Database Name
+Line 2 : Database User
+Line 3 : Database Password
+Line 4 : Database Host
+Line 5 : Database Port
+
+*/
